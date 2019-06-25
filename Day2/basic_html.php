@@ -25,7 +25,17 @@
     echo '<img src="' . $image . '" >';
     echo  '<h1>' . $firstName . ' ' . $lastName . '</h1>';
     var_dump($characteristics);
-    ?>
+
+    if ($characteristics['AttackPoint'] > 9 || $characteristics['DefensePoint'] > 9) {
+        ?>
+        <div class="alert">
+            <strong>Congratulations !</strong> Your character is ready to fight.</strong>
+        </div>
+    <?php } else { ?>
+        <div class="alert">
+            <strong>Wait !</strong> Your charachter is too weeeakk!
+        </div>
+    <?php } ?>
     <hr>
     <img src="<?php echo $image; ?>" alt="">
     <h1><?php echo $firstName . ' ' . $lastName ?></h1>
