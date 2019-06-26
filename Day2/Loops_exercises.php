@@ -93,16 +93,16 @@
     -->
 	<?php
     $array = [];
-    $min;
-    $max;
+    $min = 0;
+    $max = 0;
     for ($i = 0; $i <= 10; $i++) {
-        $array[$i] = rand(0, 100);
-    }
-    foreach ($array as $number) {
-        if (empty($min) || $min > $number) $min = $number;
-        if (empty($max) || $max < $number) $max = $number;
+        $array[$i] = rand(-100, 100);
+        if ($array[$min] > $array[$i]) $min = $i;
+        if ($array[$max] < $array[$i]) $max = $i;
     }
     var_dump($array);
     ?>
-	<p>Greatest value: <?php echo $max ?></p>
-	<p>Smallest value: <?php echo $min ?></p>
+	<p>Smallest value: <?php echo '[' . $min  . ']  ' . $array[$min]; ?></p>
+	<p>Smallest value: <?php echo min($array); ?></p>
+	<p>Greatest value: <?php echo '[' . $max . ']  ' . $array[$max]; ?></p>
+	<p>Greatest value: <?php echo max($array); ?></p>

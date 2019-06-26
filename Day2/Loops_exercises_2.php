@@ -11,8 +11,9 @@
 		You have to use a loop inside another loop to do this !
     -->
 	<?php
-	for ($i = 1; $i <= 5; $i++) {
-		for ($j = 1; $j <= $i; $j++)
+	$size = 5;
+	for ($i = 0; $i < $size; $i++) {
+		for ($j = 0; $j <= $i; $j++)
 			echo '* ';
 		echo '<br>';
 	}
@@ -33,11 +34,9 @@
 		* 
     -->
 	<?php
-	for ($i = 1; $i <= 10; $i++) {
-		$dotNb;
-		if ($i <= 5) $dotNb = $i;
-		else $dotNb = 11 - $i;
-
+	$size = 10;
+	for ($i = 1; $i <= $size; $i++) {
+		$dotNb = $i <= $size / 2 ? $i : $size + 1 - $i;
 		for ($j = 1; $j <= $dotNb; $j++)
 			echo '* ';
 		echo '<br>';
@@ -93,9 +92,8 @@
 		2 => "Rock"
 	);
 	$newArray = [];
-	foreach ($style as $idx => $st) {
+	foreach ($style as $idx => $st)
 		$newArray[$st] = $artists[$idx];
-	}
 	var_dump($newArray);
 	?>
 	<hr>
@@ -169,8 +167,7 @@
 	);
 
 	foreach ($transactions as $person => $values) {
-		$values["amount"] = $values["credit"] - $values["debit"];
-		$transactions[$person] = $values;
+		$transactions[$person]["amount"] = $values["credit"] - $values["debit"];
 	}
 	var_dump($transactions);
 	?>
@@ -208,8 +205,7 @@
 	// generating array
 	while (count($array) < $size - 1) {
 		$number = rand(1, $size);
-		if (!in_array($number, $array))
-			$array[count($array)] = $number;
+		if (!in_array($number, $array)) $array[count($array)] = $number;
 	}
 	foreach ($array as $number) {
 		echo $number . ' ';
@@ -217,7 +213,7 @@
 	// Looking for the missing number
 	echo '<br>';
 	$total = $size * ($size + 1) / 2;
-	for ($i = 0; $i <= $size - 2; $i++) {
+	for ($i = 0; $i < $size - 1; $i++) {
 		$total -= $array[$i];
 	}
 	echo 'Missing number is: ' . $total;
@@ -228,4 +224,12 @@
 		echo $number . ' ';
 	}
 
+	echo '<hr>';
+
+	$array = array(5, 1, 3, 2, 9, 6, 8, 4, 10);
+	$totalNb = count($array) + 1;
+	$var = $totalNb * ($totalNb + 1) / 2;
+	foreach ($array as $number)
+		$var -= $number;
+	echo "Missing number is: " . $var;
 	?>
