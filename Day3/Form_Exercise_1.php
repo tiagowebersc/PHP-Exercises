@@ -23,7 +23,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Exercise Form 1</title>
 	<style>
-		input{
+		input {
 			display: block;
 		}
 	</style>
@@ -44,9 +44,8 @@
 		$lastName = trim($_POST['lastName']);
 		// access logic - looks in the array is the user exists
 		$hasAccess = false;
-		$fullName = $firstName;
-		if (!empty($lastName)) $fullName .= ' '.$lastName;
-		foreach($users as $user){
+		$fullName = trim($firstName . ' ' . $lastName);
+		foreach ($users as $user) {
 			if ($user === $fullName) $hasAccess = true;
 		}
 		// show welcome message or not authorized
