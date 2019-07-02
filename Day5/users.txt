@@ -1,0 +1,4 @@
+mail=simon@gmail.com;password=1234
+mail=ricardo@gmail.com;password=password
+mail=fabrizio@gmail.com;password=ihatepasta
+mail=tiago@gmail.com;password=tiago
