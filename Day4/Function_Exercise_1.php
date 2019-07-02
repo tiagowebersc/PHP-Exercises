@@ -1,11 +1,8 @@
-<?php 
-
+<?php
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 1 </p>';
-
 /*
 -- Exercise 1 :
-	
 	1.1
 	Write a PHP script which multiply two numbers
 	Example : 2*4 = 8
@@ -22,6 +19,24 @@ echo '<p style="font-weight: 900"> EXERCISE 1 </p>';
 		(use the function created in 1.2)
 	- Warning, it is necessary to manage the case where the user does not enter the two numbers.
 */
+?>
+<form action="" method="post">
+	<input type="text" name="number1" id="number1">
+	<input type="text" name="number2" id="number2">
+	<input type="submit" value="Multiply" name="Multiply">
+</form>
+<?php
+function multiply($a, $b)
+{
+	return ($a * $b);
+}
+if (isset($_POST['Multiply'])) {
+	$n1 = $n2 = 1;
+	if (isset($_POST['number1'])) $n1 = (int) $_POST['number1'];
+	if (isset($_POST['number2'])) $n2 = (int) $_POST['number2'];
+	echo 'Result: ' . multiply($n1, $n2);
+	echo '<br>';
+}
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 2 </p>';
@@ -37,8 +52,27 @@ The expected result is this:
     The first number is larger (if the first number is larger than the second number)
     The first number is smaller (if the first number is smaller than the second number)
     The two numbers are identical (if the two numbers are equal)
-
 */
+?>
+<form action="" method="post">
+	<input type="text" name="number1" id="number1">
+	<input type="text" name="number2" id="number2">
+	<input type="submit" value="Who is Bigger" name="WhoIsBigger">
+</form>
+<?php
+
+function biggerNumber($n1, $n2)
+{
+	if ($n1 === $n2) return 'The two numbers are identical';
+	else if ($n1 > $n2) return 'The first number is larger';
+	else return 'The first number is smaller';
+}
+if (isset($_POST['WhoIsBigger'])) {
+	$n1 = $n2 = 1;
+	if (isset($_POST['number1'])) $n1 = (int) $_POST['number1'];
+	if (isset($_POST['number2'])) $n2 = (int) $_POST['number2'];
+	echo biggerNumber($n1, $n2);
+}
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 3 </p>';
@@ -58,7 +92,19 @@ echo '<p style="font-weight: 900"> EXERCISE 3 </p>';
 	- return this sum
 
 */
+$expenses = [12.3, 1, 46.78, 11, 98, 114];
+$sum = 0;
+foreach ($expenses as $expense) $sum += $expense;
+echo 'Sum: ' . $sum;
+echo '<br>';
 
+function sumExpenses($expenses)
+{
+	$sum = 0;
+	foreach ($expenses as $expense) $sum += $expense;
+	return $sum;
+}
+echo 'Sum: ' . sumExpenses($expenses);
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 4 </p>';
 
@@ -74,6 +120,27 @@ Example :
 "poop"
 
 */
+?>
+<form action="" method="post">
+	<input type="text" name="word" id="word">
+	<input type="submit" value="Is it palindrome?" name="IsItPalindrome">
+</form>
+<?php
+
+function palindrome($word)
+{
+	for ($i = 0; $i <= (strlen($word) / 2); $i++) {
+		if ($word[$i] !== $word[strlen($word) - $i - 1]) return false;
+	}
+
+	return true;
+}
+
+if (isset($_POST['IsItPalindrome'])) {
+	$word = $_POST['word'];
+	if (palindrome($word)) echo 'It is palindrome!';
+	else echo 'It isn\'t palindrome!';
+}
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 5 </p>';
@@ -85,6 +152,29 @@ Write a function that checks if a number is a prime number.
 A prime number is an integer greater than 1 that can only be divided by itself and 1.
 
 */
+?>
+<form action="" method="post">
+	<input type="text" name="number" id="number">
+	<input type="submit" value="Ist it a prime number?" name="IsItAPrimeNumber">
+</form>
+<?php
+
+function primeNumber($number)
+{
+	for ($i = 2; $i < $number; $i++) {
+		if ($number % $i === 0) {
+			return false;
+		}
+	}
+
+	return true;
+}
+
+if (isset($_POST['IsItAPrimeNumber'])) {
+	$number = $_POST['number'];
+	if (primeNumber($number)) echo 'It is a prime number!';
+	else echo 'It isn\'t a prime number!';
+}
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 6 </p>';
@@ -100,6 +190,13 @@ Example :
     	> Displays <img src='skate.jpg'>
 
 */
+
+function htmlImages($image)
+{
+	echo '<img style=\'width:300px;\'; src="' . $image . '">';
+}
+
+htmlImages('TRIKE.jpg');
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 7 </p>';
@@ -121,6 +218,15 @@ Write a function that:
     - Call your function with the numbers 10 and 2.
     - Call your function with a single number: 4
 */
+function multiply2($a = 1, $b = 1)
+{
+	return ($a * $b);
+}
+echo 'Result: ' . multiply2(10, 2);
+echo '<br>';
+
+echo 'Result: ' . multiply2(4);
+echo '<br>';
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 8 </p>';
@@ -129,6 +235,20 @@ echo '<p style="font-weight: 900"> EXERCISE 8 </p>';
 -- Exercice 8 :
 	Write a PHP function that return the reverse(mirror) of an array.
 */
+function mirror($array)
+{
+	for ($i = 0; $i <= (count($array) / 2); $i++) {
+		$temp = $array[$i];
+		$array[$i] = $array[count($array) - $i - 1];
+		$array[count($array) - $i - 1] = $temp;
+	}
+	return $array;
+}
+
+$array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+var_dump($array);
+$array2 = mirror($array);
+var_dump($array2);
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 9</p>';
@@ -146,8 +266,18 @@ Write a function 'countWords($text)' that:
     - calculate the number of words in the $text string
     - return the result
 Hint: use a function that allows you to split a sentence into words (already seen in class)
-
 */
+
+function countWords($text)
+{
+	return count(explode(' ', $text));
+}
+
+$text = 'Count how much words this sentence has.';
+
+echo $text;
+echo '<br>';
+echo countWords($text);;
 
 echo '<hr>';
 echo '<p style="font-weight: 900"> EXERCISE 10 </p>';
@@ -165,6 +295,22 @@ Expected result :
             "is" -> 2,
             "a" -> 1,
             "random" -> 2
-            ....... );
+			....... );
+		*/
+$text = 'Lorem ipsum dolo sit. Cum dolo dolo a tot! Nece dolo, dolo volu! tot Dele repu tot repu.';
 
- ?>
+function countEachWords($text)
+{
+	$result = [];
+	$array = explode(' ', $text);
+	foreach ($array as $word) {
+		$sum = 1;
+		if (isset($result[$word])) $sum += $result[$word];
+		$result[$word] = $sum;
+	}
+	return $result;
+}
+
+echo $text;
+var_dump(countEachWords($text));
+?>
