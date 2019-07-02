@@ -130,7 +130,8 @@ Example :
 function palindrome($word)
 {
 	for ($i = 0; $i <= (strlen($word) / 2); $i++) {
-		if ($word[$i] !== $word[strlen($word) - $i - 1]) return false;
+		if ($word[$i] !== $word[strlen($word) - $i - 1])
+			return false;
 	}
 
 	return true;

@@ -59,6 +59,7 @@ Here is the equation of a factorial: n! = n * (n - 1) * ... * 3 * 2 * 1
 
 function factorial($n1)
 {
+    echo $n1 . ' ';
     if ($n1 > 1) {
         return $n1 * factorial($n1 - 1);
     } else {
@@ -67,6 +68,6 @@ function factorial($n1)
 }
 
 echo '3!: ' . factorial(3) . '<br>';
-echo '7!: ' . factorial(7) . '<br>';
-echo '4!: ' . factorial(4) . '<br>';
+echo '6!: ' . factorial(6) . '<br>';
+echo '5!: ' . factorial(5) . '<br>';
 echo '9!: ' . factorial(9) . '<br>';
