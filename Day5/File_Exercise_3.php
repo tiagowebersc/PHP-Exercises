@@ -1,6 +1,6 @@
 <?php
 
-	/*
+/*
 		1. Create two files : 'signin.php' & 'home.php'
 
 		2. In the 'signin.php' file, create a form with two input : email & password.

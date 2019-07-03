@@ -1,3 +1,10 @@
+<style>
+	td,
+	th {
+		border: 1px solid black;
+		width: 14rem;
+	}
+</style>
 <?php
 
 /*
@@ -19,7 +26,8 @@ if (file_exists('transform_to_table.txt')) {
 	$fileHandle = fopen('transform_to_table.txt', 'r');
 	while (!feof($fileHandle)) {
 		$line = fgets($fileHandle);
-		echo '<tr><td>' . '</td><td>' . '</td></tr>';
+		$separationPosi = strpos($line, ':');
+		echo '<tr><td>' . substr($line, 0, $separationPosi) . '</td><td>' . substr($line, $separationPosi + 2) . '</td></tr>';
 	}
 	fclose($fileHandle);
 	echo '</table>';

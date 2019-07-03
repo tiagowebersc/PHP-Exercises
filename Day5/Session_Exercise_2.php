@@ -20,6 +20,8 @@ if (isset($_SESSION['visits']))
 $visits[count($visits)] = time();
 $_SESSION['visits'] = $visits;
 
+//var_dump($_SESSION);
+
 echo 'First visit: ' . date('Y-m-d H:i:s', $visits[0])  . '<br>';
 echo 'total of visitors: ' . count($visits);
 
