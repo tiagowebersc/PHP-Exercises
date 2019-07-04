@@ -1,0 +1,71 @@
+
+A customer, a bookseller, sets up an online business to sell books.
+He wants a website where:
+- Users can register and create an account.
+- Users can view the different books.
+- Read the biography of each author.
+- Order some books
+- Find their orders history.
+
+
+Part 1 - Modeling of the B.D.D. :
+- Determine what data the customer needs to save in the database.
+- Determine the entities (tables) that result from these data.
+- Identify the relationships between the different tables.
+- Identify the cardinalities of these relationships.
+- Identify all the attributes (for each table).
+- Create the relational diagram of the DB
+
+Part 2 - SQL Queries:
+Write all queries:
+- View all books.
+- View all authors.
+- View books sorted by release date.
+- View all books with their respective author.
+- View books sorted by authors.
+- Display all books that contain the letter 'x' (replace x with what you want)
+- Show all the books that came out in 2018 (replace the year with what you want)
+- Show all books whose author is 'Albert Camus' (replace the author by the one you want)
+- Display all books whose author's name contains the letter 'x' (replace x with what you want)
+- Retrieve all orders already placed.
+- Retrieve all orders already placed with the user's info.
+- Get all the commands of the user 'john' (replace by what you want)
+- Per user, recover the total sum of orders.
+- By user, retrieve the list of authors of which he already buy a book.
+
+/****** FRENCH *******/
+
+
+Un client, libraire, monte un business en ligne pour vendre des livres.
+Il veut un site où :
+	- Les utilisateurs peuvent s'enregistrer et créer un compte.
+	- Les utilisateurs peuvent regarder les différents livre proposés.
+	- Lire la biographie de chaque auteur.
+	- Passer commande
+	- Retrouver l'historique des commandes.
+
+
+Partie 1 - Modélisation de la B.D.D. : 
+	- Déterminez les données que le client à besoin d'enregistrer dans la base de données.
+	- Déterminez les entités (tables) qui découlent de ces données.
+	- Identifiez les relations entre les différentes tables.
+	- Identifiez les cardinalités de ces relations.
+	- Identifiez tous les attributs (pour chaque table).
+	- Créer le diagramme relationnel de la B.D.D.
+
+Partie 2 - Requêtes SQL :
+	Ecrire toutes les requêtes :
+	- Afficher tous les livres.
+	- Afficher tous les auteurs.
+	- Afficher les livres triés par date de sortie.
+	- Afficher tous les livres avec leur auteur respectif.
+	- Afficher les livres triés par auteurs.
+	- Afficher tous les livres qui contiennent la lettre 'x' (remplacer x par ce que vous voulez)
+	- Afficher tous les livres qui sont sortie en 2018 (remplacer l'année par ce que vous voulez)
+	- Afficher tous les livres dont l'auteur est 'Albert Camus' (remplacer l'auteur par celui que vous voulez)
+	- Afficher tous les livres dont le nom de l'auteur contient la lettre 'x' (remplacer x par ce que vous voulez)
+	- Récuperer toutes les commandes déjà passées.
+	- Récuperer toutes les commandes déjà passées avec les infos de l'utilisateur.
+	- Récuperer toutes les commandes de l'utilisateur 'john' (remplacer par ce que vous voulez)
+	- Par utilisateur, récupérer la somme total des commandes.
+	- Par utilisateur, récupérer la liste des auteurs dont il a déjà acheter un livre.

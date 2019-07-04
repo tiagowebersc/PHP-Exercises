@@ -1,0 +1,120 @@
+Partie 1 :
+
+- Analyse and execute this request :
+
+	CREATE TABLE directors
+	(
+	    director_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+	    first_name VARCHAR(50),
+	    last_name VARCHAR(50),
+	    date_of_birth DATE,
+	    country VARCHAR(50)
+	)
+
+This is going to create a new table : directors.
+
+- Analyze and execute this query:
+
+ALTER TABLE movies
+ADD directorID INT,
+ADD FOREIGN KEY (directorID) REFERENCES directors (director_id);
+
+This request will add a 'directorID' attribute, in the 'movies' table, which refers to the directors_id of 'directors' (foreign key).
+
+- Now, fill the table with some directors
+- Now, with a query, insert the id of each director in the 'movies' table according to their name already present in the 'director' column.
+
+Part 2 :
+- Retrieve the name and the year of birth of each director
+- Recover directors under 50 years old.
+- Recover the directors of American nationality
+
+Part 3:
+- Collect the film that was the least visible at the box office
+- Collect the most popular movie at the box office
+- Collect the 3 most viewed movies at the box office
+
+Part 4:
+- For each film, recover its title, its year of release and the name of the director
+- For each film, get all the information about it and the name of the director
+- Get the title of each film and the name of the director, sorted alphabetically on the title of the film.
+- Same but sorted on the director's name.
+
+Part 5:
+- Get all the films from the director "George Lucas"
+- Get all the director's films that are not "George Lucas"
+- Collect all films whose director has the letter 's' in his name or first name.
+
+Part 6:
+- Get all the movies from the youngest to the oldest director
+- Collect the number of films by director (with the name of the director)
+
+Part 7:
+- Get the sum of the views of all the films of the director 'George Lucas'
+- Get the sum of views of all movies by director
+- Get average views of all movies by director
+- Get the sum of the views by nationality (of the director)
+
+Part 8:
+- Get the director who makes the most views.
+- Recover nationalities (director) who made over 200,000 views
+
+Part 9:
+- All director George Lucas's films have made 20 more box office hits. Update these movies.
+
+
+/******* FRENCH : ********/
+- Remplir la table des réalisateurs
+
+- Analyser et executer cette requête :
+
+	ALTER TABLE movies
+	ADD directorID INT,
+	ADD FOREIGN KEY (directorID) REFERENCES directors(director_id);
+
+Cette requête va ajouter un attribut 'directorID', dans la table 'movies', qui fait référence au director_id de 'directors' (clé étrangere).
+
+- Maintenant, avec une requête, insérez l'id de chaque director dans la table 'movies' en fonction de leur nom déjà présent dans la colonne 'director'.
+
+- Supprimer l'ancienne colonne 'director' avec la requête :
+	
+	ALTER TABLE movies DROP director;
+
+
+Partie 2 :
+- Récupérer le nom et l'année de naissance de chaque réalisateurs
+- Récupérer les réalisateurs de moins de 50 ans.
+- Récupérer les réalisateurs de nationalité Américaine
+
+Partie 3 :
+- Récupérer le film qui a fait le moins de vue au box-office
+- Récupérer le film qui a fait le plus de vue au box-office
+- Récupérer les 3 films les plus vue au box-office
+
+Partie 4 :
+- Pour chaque film, récupérer son titre, son année de sortie et le nom du réalisateur
+- Pour chaque film, récupérer toutes les informations sur celui-ci et le nom du réalisateur
+- Récupérer le titre de chaque film ainsi que le nom du réalisateur, trié par ordre alphabétique sur le titre du film.
+- Pareil mais trié sur le nom du réalisateur.
+
+Partie 5 : 
+- Récuperer tous les films du réalisateur "George Lucas"
+- Récuperer tous les films du réalisateur qui n'es pas "George Lucas"
+- Récupérer tous les films dont le réalisateur possède la lettre 's' dans son nom ou prénom.
+
+Partie 6 :
+- Récupérer tous les films du plus jeune au plus vieux réalisateur
+- Récupérer le nombre de films par réalisateur (avec le nom du réalisateur)
+
+Partie 7 :
+- Récupérer la somme des vues de tous les films du réalisateur 'George Lucas'
+- Récupérer la somme des vues de tous les films par réalisateur
+- Récupérer la moyenne des vues de tous les films par réalisateur
+- Récupérer la somme des vues par nationalité (du réalisateur)
+
+Partie 8 :
+- Récupérer le réalisateur qui fait le plus de vues.
+- Récupérer les nationalités (de réalisateur) qui ont fait plus de 200000 vues
+
+Partie 9 :
+- Tous les films du réalisateur 'George Lucas' ont fait 20 vues de plus au box office. Mettez à jour ces films.
