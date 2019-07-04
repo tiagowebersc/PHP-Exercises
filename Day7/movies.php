@@ -35,13 +35,14 @@
         $results = mysqli_query($conn, $query);
         while ($tableRow = mysqli_fetch_assoc($results)) {
             echo '<section>';
-            echo '<img src="' . $tableRow['poster'] . '" alt="movie">';
+            echo '<img src="' . $tableRow['poster'] . '" alt="' . $tableRow['title'] . '">';
             echo '<ul>';
             echo '<li><strong>Title: </strong><a href="movie.php?id=' . $tableRow['movie_id'] . '">' . $tableRow['title'] . '</a></li>';
             echo '<li><strong>Release year: </strong>' . $tableRow['releaseYear'] . '</li>';
             echo '</ul>';
             echo '</section><hr>';
         }
+        mysqli_close($conn);
         ?>
         <a href="movies.php">List of movies</a><br>
         <a href="directors.php">List of directors</a>

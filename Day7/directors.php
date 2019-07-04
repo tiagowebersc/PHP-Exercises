@@ -42,6 +42,7 @@
             echo '</ul>';
             echo '</section><hr>';
         }
+        mysqli_close($conn);
         ?>
         <a href="movies.php">List of movies</a><br>
         <a href="directors.php">List of directors</a>

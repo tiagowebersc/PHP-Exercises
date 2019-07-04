@@ -45,6 +45,7 @@
                     echo '<li><strong>Director\'s country: </strong>' . $tableRow['country'] . '</li>';
                     echo '</ul>';
                 }
+                mysqli_close($conn);
             }
             ?>
 

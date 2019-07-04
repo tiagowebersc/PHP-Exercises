@@ -78,6 +78,7 @@
                 echo '</table>
                 
                 </div>';
+                mysqli_close($conn);
             }
 
             ?>

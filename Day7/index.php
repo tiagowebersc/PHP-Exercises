@@ -36,13 +36,14 @@
                 echo '<span style=\'color:red\'>Problem to connect to the database!!</span>';
                 die();
             }
-            $query = "select m.title, m.releaseYear, concat(d.first_name,' ',d.last_name) as 'director' from movies m inner join directors d on m.directorID = d.director_id order by m.releaseYear desc limit 3;";
+            $query = "select m.movie_id, m.title, m.releaseYear, concat(d.first_name,' ',d.last_name) as 'director' from movies m inner join directors d on m.directorID = d.director_id order by m.releaseYear desc limit 3;";
             $results = mysqli_query($conn, $query);
             while ($tableRow = mysqli_fetch_assoc($results)) {
                 echo '<tr>';
-                echo '<td>' . $tableRow['title'] . '</td><td>' . $tableRow['releaseYear'] . '</td><td>' . $tableRow['director'] . '</td>';
+                echo '<td><a href="movie.php?id=' . $tableRow['movie_id'] . '">' . $tableRow['title'] . '</a></td><td>' . $tableRow['releaseYear'] . '</td><td>' . $tableRow['director'] . '</td>';
                 echo '</tr>';
             }
+            mysqli_close($conn);
 
             ?>
         </table>
