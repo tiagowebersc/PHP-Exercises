@@ -6,7 +6,7 @@ $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
 echo 'Connection successfull<br>';
 //var_dump($conn);
 // Choose wich database I want to work with
-$db_name = 'moviedb';
+$db_name = DB_NAME;
 $db_found = mysqli_select_db($conn, $db_name);
 
 if ($db_found) {

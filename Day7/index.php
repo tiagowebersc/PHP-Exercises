@@ -31,7 +31,7 @@
             <?php
             require_once 'database.php';
             $conn = mysqli_connect(DB_SERVER, DB_USER, DB_PASSWORD);
-            $dbFound = mysqli_select_db($conn, 'moviedb');
+            $dbFound = mysqli_select_db($conn, DB_NAME);
             if (!$dbFound) {
                 echo '<span style=\'color:red\'>Problem to connect to the database!!</span>';
                 die();

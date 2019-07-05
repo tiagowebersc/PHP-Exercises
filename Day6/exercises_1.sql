@@ -41,6 +41,5 @@ select concat(d.first_name,' ',d.last_name) as 'director', sum(m.views) as 'sum 
 select distinct d.country from movies m inner join directors d on m.directorID = d.director_id group by concat(d.first_name,' ',d.last_name) having sum(m.views) > 2000;
 -- Part 9 ------------------------------------------
 select m.title from movies m inner join directors d on m.directorID = d.director_id where concat(d.first_name,' ',d.last_name) = 'George Lucas' and m.views > 20;
+update movies m inner join directors d on m.directorid = d.director_id set views = views + 20 where concat(d.first_name,' ',d.last_name) = 'George Lucas';
 
-
-select m.title, m.releaseYear, views, concat(d.first_name,' ',d.last_name) as 'director', d.country from movies m inner join directors d on m.directorID = d.director_id where m.movie_id = '1';

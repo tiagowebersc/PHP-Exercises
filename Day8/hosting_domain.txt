@@ -1,0 +1,22 @@
+1 - Hosting
+// Type of hosting servers: 
+	1 - Shared hosting
+	It's a physical computer for multiple users
+	Cons:
+		- Shared ressources: CPU / RAM / HardDrive
+		- Impossible to add your own configuration's server
+		- you don't access to root or SSH
+	2 - Dedicated servers
+	This is a server just for me
+	Pros:
+		- You don't share any ressources
+		- You have access to everything
+		- You can configure anything on the server
+	Cons:
+		- Cost
+		- Maintenance of the server
+	3 - VPS (Virtual Private Server)
+	// Example of hosts:
+	OVH, Gandi, DigitalOcean......
+
+2 - Domain name

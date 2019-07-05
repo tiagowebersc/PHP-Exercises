@@ -1,0 +1,7 @@
+Host: 137.74.118.171
+
+To access your website:
+http://171.ip-137-74-118.eu/dev/YOUR_USER/
+
+To access PHPMYADMIN:
+http://171.ip-137-74-118.eu/phpmyadmin
